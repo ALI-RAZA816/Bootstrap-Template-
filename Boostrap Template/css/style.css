@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    overflow-y:scroll;
+}
+body.active{
+    overflow: hidden;
+}
+#header .menu{
+    display:none;
+    font-size:30px;
+    cursor: pointer;
+}
+#header{
+    background-color: #E84C3E;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.col-md-4 h1#logoname{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height:20px;
+    font-size:35px;
+}
+
+.col-md-4 h1#logoname span{
+    font-weight:300;
+    font-size:16px;
+}
+.col-md-4 img{
+    height:70px;
+    /* width: 100%; */
+    object-fit: cover;
+}
+.menu-link{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+.menu-link li{
+    display: inline-block;
+}
+.menu-link li a{
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    text-decoration: none;
+    padding: 15px 10px;
+}
+.menu-link li a:hover{
+    background-color: #c94337;
+}
+#banner{
+    background-image: url('../images/bg_1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    width: 100%;
+}
+#banner .title{
+    background-color:rgba(255,255,255,.80);
+    padding: 5px 8px;
+    margin: 0;
+    color: #333;
+    font-size: 2.3rem;
+}
+#banner #banner-inner{
+    padding-top:100px;
+}
+#banner .para{
+    background-color:rgba(232, 76, 62,.70);
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 16px;
+}
+#first-section{
+    background-color: #fff;
+}
+#first-section .first-sec-head,
+#testimonials .testiHead h1,
+#news .newsHead h1#news-title{
+    text-align: center;
+    margin-bottom:70px;
+    color: #333;
+    font-size:30px;
+    position: relative;
+    padding: 10px 0;
+}
+#first-section .first-sec-head::after,
+#testimonials .testiHead h1::after,
+#news .newsHead h1#news-title::after{
+    position:absolute;
+    content: "";
+    bottom: 0;
+    left:50%;
+    height: 3px;
+    width:10%;
+    transform: translate(-50%,50%);
+    background-color:#E84C3E;
+}
+#first-section .clients{
+    text-align: center;
+}
+#first-section .clients i{
+    font-size:45px;
+    color: #E84C3E;
+}
+#first-section .clients h2{
+    margin:25px 0;
+    color: #333;
+    font-size: 25px;
+}
+#testimonials{
+    min-height: 450px;
+    overflow: hidden;
+    width: 100%;
+    background-image: url('../images/project-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+}
+#testimonials::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(72, 82, 98,.80);
+}
+#testimonials .testimonial img{
+    height:80px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#testimonials .testiHead h1{
+    color: #fff !important;
+}
+#testimonials .testimonial{
+    padding-top:30px;
+}
+#testimonials .testimonial p{
+    color: #fff;
+}
+#news .news-box img{
+    height:150px;
+    width: 100%;
+    object-fit: cover;
+}
+#news .news-box h1{
+    font-size: 22px;
+    color: #E84C3E;
+    margin: 15px 0;
+}
+#news .news-box p{
+    color: #333;
+    font-size: 16px;
+}
+#news .news-box p i{
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+#news .news-box p:nth-child(3){
+    font-size: 13px;
+}
+#news .news-box a{
+    color: #E84C3E;
+    text-decoration: none;
+    font-size: 15px;
+}
+#footer{
+    background-color: #344860;
+}
+#footer .footer-box h1{
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 25px;
+    line-height:40px;
+}
+#footer .footer-box h1::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-color: #fff;
+    height:2px;
+    width: 50px;
+}
+#footer .footer-box p{
+    color: #fff;
+    font-size: 15px;
+}
+#footer .footer-box ul{
+    list-style: none;
+    color: #fff;
+}
+#footer .footer-box ul li i{
+    font-size:12px;
+    margin-right: 5px;
+}
+#footer .footer-box span{
+    font-weight: bold;
+    color: #fff;
+}
+@media screen and (max-width:1010px) {
+    #header #menu-bar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        opacity:0;
+        visibility:hidden;
+        height:0;
+        z-index: 99;
+        background-color: #c94337;
+        transition: opacity .30s ease;
+    }
+    #header #menu-bar.active{
+        height: 900px;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+    }
+    #header #menu-bar .menu-link{
+        width: 100%;
+    }
+    #header #menu-bar .menu-link li{
+        display:block;
+        text-align: center;
+        margin: 20px 0;
+    }
+    #header .menu{
+        display: block;
+    }
+}
+
+
+@media  screen and (max-width:500px) {
+    .col-md-4 img{
+        height: 55px;
+    }
+
+    .col-md-4 h1#logoname{
+        font-size:30px;
+    }
+
+}
+
+
